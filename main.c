@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:29:48 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/28 21:17:02 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:16:39 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #define TEST_STRING "%% this is the test string %%\n\
 these should be untouched : %d%p%c%u%i%s%x%X\n"
 
-int	main(void)
+int	long_test(void)
 {
 	int		n;
 	char	*str;
@@ -67,5 +67,22 @@ int	main(void)
 	ft_printf("EXPECTED [ 7FFFFFFF 80000000 FFFFFFFF 0 FFFFFFFF 0 FFFFFFD6]\nOUTPUT   [ %X %X %X %X %X %X %X]\n\n",
 							INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	return (0);
+}
+
+#include <stdio.h>
+
+int	short_test(void)
+{
+	int a = ft_printf("%%c %c %%c\n", 0);
+	int b = printf("%%c %c %%c\n", 0);
+	printf("ft: %d libc: %d\n", a, b);
+	return (0);
+}
+
+int	main(void)
+{
+//	long_test();
+	short_test();
 	return (0);
 }
