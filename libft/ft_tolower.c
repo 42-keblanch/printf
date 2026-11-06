@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 18:37:40 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/14 18:06:52 by kblanche         ###   ########.fr       */
+/*   Created: 2026/10/20 20:06:06 by keblanch          #+#    #+#             */
+/*   Updated: 2026/11/06 15:16:05 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

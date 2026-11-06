@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ptoh.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 00:22:31 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/28 21:11:15 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:03:42 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 #include <stdint.h>
 #define PTOH_LEN 50
 #define NIL_STR "(nil)"

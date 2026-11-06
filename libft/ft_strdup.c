@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 17:59:38 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/14 18:19:57 by kblanche         ###   ########.fr       */
+/*   Created: 2026/10/20 18:46:38 by keblanch          #+#    #+#             */
+/*   Updated: 2026/10/20 19:40:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -22,7 +22,7 @@ char	*ft_strdup(const char *s)
 	size = ft_strlen(s) + 1;
 	t = (char *)ft_calloc(size, sizeof(char));
 	if (!t)
-		return (0);
+		return (NULL);
 	while (i < size)
 	{
 		t[i] = s[i];

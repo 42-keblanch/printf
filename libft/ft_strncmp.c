@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 18:33:45 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/08 17:23:43 by kblanche         ###   ########.fr       */
+/*   Created: 2026/10/20 19:52:39 by keblanch          #+#    #+#             */
+/*   Updated: 2026/10/20 19:52:48 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

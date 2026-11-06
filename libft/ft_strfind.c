@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strfind.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 08:26:19 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/27 17:49:54 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:05:37 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 ssize_t	ft_strfind(const char *haystack, const char *needle)
 {

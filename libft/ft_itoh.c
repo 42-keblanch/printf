@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoh.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 00:22:31 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/28 20:29:06 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:03:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 #define ITOH_LEN 50
 #define HEX_ARR "0123456789abcdef"
 #define HEX_ARR_LEN 16
