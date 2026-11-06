@@ -8,5 +8,9 @@
         "**/Thumbs.db": true,
         "**/*.o": true,
     },
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+	"github.copilot.enable": {
+		"*": true
+	},
+	"editor.inlineSuggest.enabled": false,
 }
