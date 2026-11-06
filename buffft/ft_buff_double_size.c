@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string_double_size.c                            :+:      :+:    :+:   */
+/*   ft_buff_double_size.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:04:58 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/27 22:00:52 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:18:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stringft.h"
+#include "../buffft.h"
 #include "../libft.h"
 #include <stdlib.h>
 
-size_t	ft_string_double_size(t_string *self)
+size_t	ft_buff_double_size(t_string *self)
 {
 	char	*temp;
 

@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string_append_2.c                               :+:      :+:    :+:   */
+/*   ft_buff_append_2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 19:16:25 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/18 20:26:57 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:18:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stringft.h"
+#include "../buffft.h"
 #include "../libft.h"
 
-void	ft_string_append_int(t_string *self, const int n)
+void	ft_buff_append_int(t_string *self, const int n)
 {
 	char	*str;
 
 	str = ft_itoa(n);
-	ft_string_append(self, str);
+	ft_buff_append(self, str);
 }
 
-void	ft_string_append_percent(t_string *self)
+void	ft_buff_append_percent(t_string *self)
 {
 	const char	*str = "%";
 
-	ft_string_append(self, str);
+	ft_buff_append(self, str);
 }
 
-void	ft_string_append_pointer(t_string *self, const void *p)
+void	ft_buff_append_pointer(t_string *self, const void *p)
 {
 	char	*str;
 
 	str = ft_ptoh(p);
-	ft_string_append(self, str);
+	ft_buff_append(self, str);
 }
 
-void	ft_string_append_unsigned(t_string *self, const unsigned int n)
+void	ft_buff_append_unsigned(t_string *self, const unsigned int n)
 {
 	char	*str;
 
 	str = ft_itoa(n);
-	ft_string_append(self, str);
+	ft_buff_append(self, str);
 }

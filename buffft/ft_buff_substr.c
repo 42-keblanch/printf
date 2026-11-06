@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string_substr.c                                 :+:      :+:    :+:   */
+/*   ft_buff_substr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:45:09 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/22 06:06:50 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:18:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stringft.h"
+#include "../buffft.h"
 #include "../libft.h"
 #include <stddef.h>
 
-t_string	ft_string_substr(t_string *self, size_t index, size_t len)
+t_string	ft_buff_substr(t_string *self, size_t index, size_t len)
 {
 	t_string	ret;
 

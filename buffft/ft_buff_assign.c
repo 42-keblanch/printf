@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string_assign.c                                 :+:      :+:    :+:   */
+/*   ft_buff_assign.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:11:31 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/18 21:01:52 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:18:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stringft.h"
+#include "../buffft.h"
 #include "../libft.h"
 #include <stdlib.h>
 
-void	ft_string_assign(t_string *self, const char *str)
+void	ft_buff_assign(t_string *self, const char *str)
 {
 	size_t	str_len;
 
@@ -26,6 +26,6 @@ void	ft_string_assign(t_string *self, const char *str)
 	}
 	str_len = ft_strlen(str);
 	while (self->max_size <= str_len)
-		ft_string_double_size(self);
+		ft_buff_double_size(self);
 	ft_strlcpy(self->str, str, str_len + 1);
 }

@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 01:15:03 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/04 20:44:47 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:19:11 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ size_t	ft_printf_parse_char(t_string *out, size_t *cursor, va_list *args)
 	is_null_char = 0;
 	if (c == '\0')
 		is_null_char = 1;
-	ft_string_erase(out, *cursor, 2);
-	*cursor += ft_string_insert_char(out, *cursor, c);
+	ft_buff_erase(out, *cursor, 2);
+	*cursor += ft_buff_insert_char(out, *cursor, c);
 	return (is_null_char);
 }
 
@@ -71,11 +71,11 @@ void	ft_printf_parse_string(t_string *out, size_t *cursor, va_list *args)
 	char	*str;
 
 	str = va_arg(*args, char *);
-	ft_string_erase(out, *cursor, 2);
+	ft_buff_erase(out, *cursor, 2);
 	if (str)
-		*cursor += ft_string_insert(out, *cursor, str);
+		*cursor += ft_buff_insert(out, *cursor, str);
 	else
-		*cursor += ft_string_insert(out, *cursor, NULL_STR);
+		*cursor += ft_buff_insert(out, *cursor, NULL_STR);
 }
 
 void	ft_printf_parse_pointer(t_string *out, size_t *cursor, va_list *args)
@@ -83,6 +83,6 @@ void	ft_printf_parse_pointer(t_string *out, size_t *cursor, va_list *args)
 	void	*p;
 
 	p = va_arg(*args, void *);
-	ft_string_erase(out, *cursor, 2);
-	*cursor += ft_string_insert_ptr(out, *cursor, p);
+	ft_buff_erase(out, *cursor, 2);
+	*cursor += ft_buff_insert_ptr(out, *cursor, p);
 }

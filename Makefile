@@ -23,17 +23,17 @@ SRCS = libft/ft_calloc.c \
 	   libft/ft_strncmp.c \
 	   libft/ft_tolower.c \
 	   libft/ft_toupper.c \
-	   stringft/ft_string_append.c \
-	   stringft/ft_string_append_2.c \
-	   stringft/ft_string_assign.c \
-	   stringft/ft_string_destroy.c \
-	   stringft/ft_string_double_size.c \
-	   stringft/ft_string_erase.c \
-	   stringft/ft_string_init.c \
-	   stringft/ft_string_insert.c \
-	   stringft/ft_string_insert_2.c \
-	   stringft/ft_string_print.c \
-	   stringft/ft_string_substr.c
+	   buffft/ft_buff_append.c \
+	   buffft/ft_buff_append_2.c \
+	   buffft/ft_buff_assign.c \
+	   buffft/ft_buff_destroy.c \
+	   buffft/ft_buff_double_size.c \
+	   buffft/ft_buff_erase.c \
+	   buffft/ft_buff_init.c \
+	   buffft/ft_buff_insert.c \
+	   buffft/ft_buff_insert_2.c \
+	   buffft/ft_buff_print.c \
+	   buffft/ft_buff_substr.c
 PRINTF_SRCS = printfft/ft_printf_parse.c \
 			  printfft/ft_printf_parse_2.c \
 			  printfft/ft_printf.c

@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 20:24:07 by keblanch          #+#    #+#             */
-/*   Updated: 2026/11/04 20:56:05 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:18:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #  define PRINTF_OUT 1
 # endif
 
-# include "stringft.h"
+# include "buffft.h"
 # include <stdarg.h>
 
 typedef enum e_print

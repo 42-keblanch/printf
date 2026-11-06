@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string_destroy.c                                :+:      :+:    :+:   */
+/*   ft_buff_destroy.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@42angouleme.fr>         +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:37:43 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/08 17:41:04 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:18:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stringft.h"
+#include "../buffft.h"
 #include <stdlib.h>
 
-void	ft_string_destroy(t_string *self)
+void	ft_buff_destroy(t_string *self)
 {
 	free(self->str);
 	self->str = NULL;

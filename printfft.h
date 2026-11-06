@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printfft.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kblanche <kblanche@student.42.fr>          +#+  +:+       +#+        */
+/*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 01:12:35 by kblanche          #+#    #+#             */
-/*   Updated: 2026/01/25 02:03:22 by kblanche         ###   ########.fr       */
+/*   Updated: 2026/11/06 14:18:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #  define PRINTF_OUT 1
 # endif
 
-# include "stringft.h"
+# include "buffft.h"
 # include <stdarg.h>
 
 typedef enum e_print
