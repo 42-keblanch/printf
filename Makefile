@@ -8,6 +8,7 @@ CFLAGS = -Wall -Wextra -Werror
 NEUTRAL = \033[0;0m
 RED = \033[0;31m
 YELLOW = \033[0;33m
+GREEN = \033[0;32m
 BLUE = \033[0;34m
 
 SRCS = libft/ft_calloc.c \
@@ -52,6 +53,9 @@ re: fclean all
 test: $(OBJS) $(PRINTF_BONUS_OBJS)
 	@$(CC) $(CFLAGS) $(DEBUG) main.c $^ -o $(TEST_O)
 	@printf "${YELLOW}Building ${BLUE}$@\n${NEUTRAL}"
+	@printf "${GREEN}Testing...\n${NEUTRAL}"
+	@./$(TEST_O) | cat -e
+	@printf "${GREEN}Tests ended...\n${NEUTRAL}"
 
 $(NAME): $(OBJS) $(PRINTF_OBJS)
 	@$(AR) $@ $^
