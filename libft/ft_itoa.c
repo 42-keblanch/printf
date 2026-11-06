@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 18:43:44 by keblanch          #+#    #+#             */
-/*   Updated: 2026/11/06 16:54:58 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/06 17:02:25 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ char	*ft_uitoa(unsigned int n)
 	}
 	return (ret);
 }
-
 
 char	*ft_itoa(int n)
 {
