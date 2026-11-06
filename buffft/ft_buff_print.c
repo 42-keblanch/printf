@@ -13,9 +13,9 @@
 #include "../buffft.h"
 #include "../libft.h"
 
-void	ft_buff_print(const t_string *self, int fd)
+void	ft_buff_print(const t_buff *self, int fd)
 {
-	t_string	out;
+	t_buff	out;
 
 	ft_buff_init(&out);
 	ft_buff_assign(&out, "string: [");

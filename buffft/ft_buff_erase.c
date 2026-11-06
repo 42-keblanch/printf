@@ -14,7 +14,7 @@
 #include "../libft.h"
 #include <stddef.h>
 
-void	ft_buff_erase(t_string *self, size_t index, size_t len)
+void	ft_buff_erase(t_buff *self, size_t index, size_t len)
 {
 	ft_strlcpy(self->str + index,
 		self->str + index + len,

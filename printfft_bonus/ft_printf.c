@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:58:49 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/06 14:19:11 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:40:55 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	ft_printf(const char *str, ...)
 {
 	va_list		args;
-	t_string	out;
+	t_buff		out;
 	int			ret;
 	size_t		cursor;
 	size_t		nb_null_char;

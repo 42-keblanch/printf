@@ -15,7 +15,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-size_t	ft_buff_insert(t_string *self, size_t index, const char *str)
+size_t	ft_buff_insert(t_buff *self, size_t index, const char *str)
 {
 	size_t	str_len;
 	size_t	self_len;
@@ -37,7 +37,7 @@ size_t	ft_buff_insert(t_string *self, size_t index, const char *str)
 	return (str_len);
 }
 
-size_t	ft_buff_insert_char(t_string *self, size_t index, const char c)
+size_t	ft_buff_insert_char(t_buff *self, size_t index, const char c)
 {
 	char	str[2];
 	size_t	ret;
@@ -48,7 +48,7 @@ size_t	ft_buff_insert_char(t_string *self, size_t index, const char c)
 	return (ret);
 }
 
-size_t	ft_buff_insert_hex_lo(t_string *self, size_t index, const int n)
+size_t	ft_buff_insert_hex_lo(t_buff *self, size_t index, const int n)
 {
 	char	*str;
 	size_t	ret;
@@ -60,7 +60,7 @@ size_t	ft_buff_insert_hex_lo(t_string *self, size_t index, const int n)
 	return (ret);
 }
 
-size_t	ft_buff_insert_hex_up(t_string *self, size_t index, const int n)
+size_t	ft_buff_insert_hex_up(t_buff *self, size_t index, const int n)
 {
 	char	*str;
 	size_t	ret;

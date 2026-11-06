@@ -14,9 +14,9 @@
 #include "../libft.h"
 #include <stddef.h>
 
-t_string	ft_buff_substr(t_string *self, size_t index, size_t len)
+t_buff	ft_buff_substr(t_buff *self, size_t index, size_t len)
 {
-	t_string	ret;
+	t_buff	ret;
 
 	ret.str = ft_strdup(self->str + index);
 	ret.max_size = ft_strlen(ret.str);

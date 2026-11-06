@@ -14,7 +14,7 @@
 #include "../libft.h"
 #include <stddef.h>
 
-void	ft_buff_append(t_string *self, const char *str)
+void	ft_buff_append(t_buff *self, const char *str)
 {
 	size_t	self_len;
 	size_t	str_len;
@@ -33,7 +33,7 @@ void	ft_buff_append(t_string *self, const char *str)
 	ft_strlcpy(self->str + self_len, str, str_len + 1);
 }
 
-void	ft_buff_append_char(t_string *self, const char c)
+void	ft_buff_append_char(t_buff *self, const char c)
 {
 	char	str[2];
 
@@ -42,7 +42,7 @@ void	ft_buff_append_char(t_string *self, const char c)
 	ft_buff_append(self, str);
 }
 
-void	ft_buff_append_hex_lo(t_string *self, const int n)
+void	ft_buff_append_hex_lo(t_buff *self, const int n)
 {
 	char	*str;
 
@@ -51,7 +51,7 @@ void	ft_buff_append_hex_lo(t_string *self, const int n)
 	ft_buff_append(self, str);
 }
 
-void	ft_buff_append_hex_up(t_string *self, const int n)
+void	ft_buff_append_hex_up(t_buff *self, const int n)
 {
 	char	*str;
 

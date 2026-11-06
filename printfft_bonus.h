@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 20:24:07 by keblanch          #+#    #+#             */
-/*   Updated: 2026/11/06 14:18:33 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:39:21 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 typedef enum e_print
 {
 	PRINT_CHAR = 'c',
-	PRINT_STRING = 's',
+	PRINt_buff = 's',
 	PRINT_POINTER = 'p',
 	PRINT_DECIMAL = 'd',
 	PRINT_INTEGER = 'i',
@@ -44,15 +44,15 @@ struct s_format_specifier
 typedef struct s_format_specifier	t_fmtsp;
 
 int		ft_printf(const char *str, ...);
-size_t	ft_printf_parse(t_string *out, size_t *cursor, va_list *args);
-size_t	ft_printf_parse_char(t_string *out, size_t *cursor, va_list *args);
-void	ft_printf_parse_string(t_string *out, size_t *cursor, va_list *args);
-void	ft_printf_parse_pointer(t_string *out, size_t *cursor, va_list *args);
-void	ft_printf_parse_integer(t_string *out, size_t *cursor, va_list *args);
-void	ft_printf_parse_unsigned(t_string *out, size_t *cursor, va_list *args);
-void	ft_printf_parse_uphex(t_string *out, size_t *cursor, va_list *args);
-void	ft_printf_parse_lohex(t_string *out, size_t *cursor, va_list *args);
-void	ft_printf_parse_percent(t_string *out, size_t *cursor);
-t_fmtsp	ft_printf_parse_spec(t_string *out, size_t *cursor);
+size_t	ft_printf_parse(t_buff *out, size_t *cursor, va_list *args);
+size_t	ft_printf_parse_char(t_buff *out, size_t *cursor, va_list *args);
+void	ft_printf_parse_string(t_buff *out, size_t *cursor, va_list *args);
+void	ft_printf_parse_pointer(t_buff *out, size_t *cursor, va_list *args);
+void	ft_printf_parse_integer(t_buff *out, size_t *cursor, va_list *args);
+void	ft_printf_parse_unsigned(t_buff *out, size_t *cursor, va_list *args);
+void	ft_printf_parse_uphex(t_buff *out, size_t *cursor, va_list *args);
+void	ft_printf_parse_lohex(t_buff *out, size_t *cursor, va_list *args);
+void	ft_printf_parse_percent(t_buff *out, size_t *cursor);
+t_fmtsp	ft_printf_parse_spec(t_buff *out, size_t *cursor);
 
 #endif

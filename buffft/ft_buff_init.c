@@ -15,14 +15,14 @@
 
 #include <stdlib.h>
 
-t_string	*ft_buff_init(t_string *self)
+t_buff	*ft_buff_init(t_buff *self)
 {
 	self->max_size = 0;
 	self->str = NULL;
 	return (self);
 }
 
-t_string	*ft_buff_init_str(t_string *self, const char *str)
+t_buff	*ft_buff_init_str(t_buff *self, const char *str)
 {
 	size_t	str_len;
 

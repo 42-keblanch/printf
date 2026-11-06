@@ -14,7 +14,7 @@
 #include "../libft.h"
 #include <stdlib.h>
 
-void	ft_buff_assign(t_string *self, const char *str)
+void	ft_buff_assign(t_buff *self, const char *str)
 {
 	size_t	str_len;
 

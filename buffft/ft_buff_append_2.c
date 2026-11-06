@@ -13,7 +13,7 @@
 #include "../buffft.h"
 #include "../libft.h"
 
-void	ft_buff_append_int(t_string *self, const int n)
+void	ft_buff_append_int(t_buff *self, const int n)
 {
 	char	*str;
 
@@ -21,14 +21,14 @@ void	ft_buff_append_int(t_string *self, const int n)
 	ft_buff_append(self, str);
 }
 
-void	ft_buff_append_percent(t_string *self)
+void	ft_buff_append_percent(t_buff *self)
 {
 	const char	*str = "%";
 
 	ft_buff_append(self, str);
 }
 
-void	ft_buff_append_pointer(t_string *self, const void *p)
+void	ft_buff_append_pointer(t_buff *self, const void *p)
 {
 	char	*str;
 
@@ -36,7 +36,7 @@ void	ft_buff_append_pointer(t_string *self, const void *p)
 	ft_buff_append(self, str);
 }
 
-void	ft_buff_append_unsigned(t_string *self, const unsigned int n)
+void	ft_buff_append_unsigned(t_buff *self, const unsigned int n)
 {
 	char	*str;
 

@@ -6,14 +6,14 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:29:48 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/06 14:16:39 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:49:46 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printfft.h"
 #include <limits.h>
 #include <stdlib.h>
-#define TEST_STRING "%% this is the test string %%\n\
+#define TEST_BUFF "%% this is the test string %%\n\
 these should be untouched : %d%p%c%u%i%s%x%X\n"
 
 int	long_test(void)
@@ -44,7 +44,7 @@ int	long_test(void)
 	ft_printf("%%x %x %%x\n", n);
 	ft_printf("%%X %X %%X\n", n);
 	ft_printf("%%p %p %%p\n", str);
-	ft_printf("%%s %s %%s\n", TEST_STRING);
+	ft_printf("%%s %s %%s\n", TEST_BUFF);
 	ft_printf("test with negative values:\n");
 	n = -42;
 	ft_printf("%%d %d %%d\n", n);

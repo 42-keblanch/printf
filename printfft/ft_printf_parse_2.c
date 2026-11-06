@@ -6,13 +6,13 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 01:15:31 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/06 14:19:11 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/06 15:39:22 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../printfft.h"
 
-void	ft_printf_parse_integer(t_string *out, size_t *cursor, va_list *args)
+void	ft_printf_parse_integer(t_buff *out, size_t *cursor, va_list *args)
 {
 	int	n;
 
@@ -21,7 +21,7 @@ void	ft_printf_parse_integer(t_string *out, size_t *cursor, va_list *args)
 	*cursor += ft_buff_insert_int(out, *cursor, n);
 }
 
-void	ft_printf_parse_unsigned(t_string *out, size_t *cursor, va_list *args)
+void	ft_printf_parse_unsigned(t_buff *out, size_t *cursor, va_list *args)
 {
 	unsigned int	n;
 
@@ -30,7 +30,7 @@ void	ft_printf_parse_unsigned(t_string *out, size_t *cursor, va_list *args)
 	*cursor += ft_buff_insert_uint(out, *cursor, n);
 }
 
-void	ft_printf_parse_uphex(t_string *out, size_t *cursor, va_list *args)
+void	ft_printf_parse_uphex(t_buff *out, size_t *cursor, va_list *args)
 {
 	int	n;
 
@@ -39,7 +39,7 @@ void	ft_printf_parse_uphex(t_string *out, size_t *cursor, va_list *args)
 	*cursor += ft_buff_insert_hex_up(out, *cursor, n);
 }
 
-void	ft_printf_parse_lohex(t_string *out, size_t *cursor, va_list *args)
+void	ft_printf_parse_lohex(t_buff *out, size_t *cursor, va_list *args)
 {
 	int	n;
 
@@ -48,7 +48,7 @@ void	ft_printf_parse_lohex(t_string *out, size_t *cursor, va_list *args)
 	*cursor += ft_buff_insert_hex_lo(out, *cursor, n);
 }
 
-void	ft_printf_parse_percent(t_string *out, size_t *cursor)
+void	ft_printf_parse_percent(t_buff *out, size_t *cursor)
 {
 	ft_buff_erase(out, *cursor, 2);
 	*cursor += ft_buff_insert_percent(out, *cursor);

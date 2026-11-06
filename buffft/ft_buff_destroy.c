@@ -13,7 +13,7 @@
 #include "../buffft.h"
 #include <stdlib.h>
 
-void	ft_buff_destroy(t_string *self)
+void	ft_buff_destroy(t_buff *self)
 {
 	free(self->str);
 	self->str = NULL;

@@ -14,7 +14,7 @@
 #include "../libft.h"
 #include <stdlib.h>
 
-size_t	ft_buff_insert_int(t_string *self, size_t index, const int n)
+size_t	ft_buff_insert_int(t_buff *self, size_t index, const int n)
 {
 	char	*str;
 	size_t	ret;
@@ -25,7 +25,7 @@ size_t	ft_buff_insert_int(t_string *self, size_t index, const int n)
 	return (ret);
 }
 
-size_t	ft_buff_insert_percent(t_string *self, size_t index)
+size_t	ft_buff_insert_percent(t_buff *self, size_t index)
 {
 	const char	*str = "%";
 	size_t		ret;
@@ -34,7 +34,7 @@ size_t	ft_buff_insert_percent(t_string *self, size_t index)
 	return (ret);
 }
 
-size_t	ft_buff_insert_ptr(t_string *self, size_t index, const void *p)
+size_t	ft_buff_insert_ptr(t_buff *self, size_t index, const void *p)
 {
 	char	*str;
 	size_t	ret;
@@ -45,7 +45,7 @@ size_t	ft_buff_insert_ptr(t_string *self, size_t index, const void *p)
 	return (ret);
 }
 
-size_t	ft_buff_insert_uint(t_string *self, size_t index, const t_uint n)
+size_t	ft_buff_insert_uint(t_buff *self, size_t index, const t_uint n)
 {
 	char	*str;
 	size_t	ret;

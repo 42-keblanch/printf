@@ -14,7 +14,7 @@
 #include "../libft.h"
 #include <stdlib.h>
 
-size_t	ft_buff_double_size(t_string *self)
+size_t	ft_buff_double_size(t_buff *self)
 {
 	char	*temp;
 
