@@ -18,9 +18,9 @@ t_buff	ft_buff_substr(t_buff *self, size_t index, size_t len)
 {
 	t_buff	ret;
 
-	ret.str = ft_strdup(self->str + index);
-	ret.max_size = ft_strlen(ret.str);
+	ret.data = ft_strdup(self->data + index);
+	ret.max_size = ft_strlen(ret.data);
 	if (len <= ret.max_size)
-		ret.str[len] = '\0';
+		ret.data[len] = '\0';
 	return (ret);
 }

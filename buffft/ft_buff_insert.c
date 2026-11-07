@@ -23,14 +23,14 @@ size_t	ft_buff_insert(t_buff *self, size_t index, const char *str)
 
 	if (!str)
 		return (0);
-	self_len = ft_strlen(self->str);
+	self_len = ft_strlen(self->data);
 	if (self_len < index)
 		return (0);
 	str_len = ft_strlen(str);
 	while (str_len >= self->max_size - self_len)
 		ft_buff_double_size(self);
-	tmp = ft_strdup(self->str);
-	self->str[index] = '\0';
+	tmp = ft_strdup(self->data);
+	self->data[index] = '\0';
 	ft_buff_append(self, str);
 	ft_buff_append(self, tmp + index);
 	free(tmp);

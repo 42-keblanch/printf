@@ -16,8 +16,8 @@
 
 void	ft_buff_erase(t_buff *self, size_t index, size_t len)
 {
-	ft_strlcpy(self->str + index,
-		self->str + index + len,
-		ft_strlen(self->str + index + len) + 1
+	ft_strlcpy(self->data + index,
+		self->data + index + len,
+		ft_strlen(self->data + index + len) + 1
 		);
 }

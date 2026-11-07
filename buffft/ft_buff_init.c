@@ -18,7 +18,8 @@
 t_buff	*ft_buff_init(t_buff *self)
 {
 	self->max_size = 0;
-	self->str = NULL;
+	self->curr_size = 0;
+	self->data = NULL;
 	return (self);
 }
 
@@ -28,7 +29,6 @@ t_buff	*ft_buff_init_str(t_buff *self, const char *str)
 
 	str_len = ft_strlen(str);
 	self->max_size = str_len;
-	self->str = ft_calloc(str_len + 1, sizeof(char));
-	ft_strlcpy(self->str, str, str_len + 1);
+	self->curr_size = str_len;
 	return (self);
 }

@@ -25,13 +25,13 @@ size_t	ft_buff_double_size(t_buff *self)
 	temp = ft_calloc(self->max_size, 1);
 	if (!temp)
 	{
-		free(self->str);
-		self->str = NULL;
+		free(self->data);
+		self->data = NULL;
 		return (0);
 	}
-	if (self->str)
-		ft_memcpy(temp, self->str, ft_strlen(self->str));
-	free(self->str);
-	self->str = temp;
+	if (self->data)
+		ft_memcpy(temp, self->data, ft_strlen(self->data));
+	free(self->data);
+	self->data = temp;
 	return (self->max_size);
 }

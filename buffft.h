@@ -18,7 +18,8 @@
 typedef unsigned int	t_uint;
 typedef struct s_ft_buff
 {
-	char	*str;
+	char	*data;
+	size_t	curr_size;
 	size_t	max_size;
 }	t_buff;
 

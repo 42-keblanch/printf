@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 01:15:03 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/06 15:39:22 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/07 17:25:52 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ size_t	ft_printf_parse(t_buff *out, size_t *cursor, va_list *args)
 	t_fmtsp	tmp;
 	size_t	nb_null_char;
 
-	*cursor += ft_strfind(out->str + *cursor, "%");
+	*cursor += ft_strfind(out->data + *cursor, "%");
 	tmp = ft_printf_parse_spec(out, cursor);
 	nb_null_char = 0;
 	if (tmp.specifier == PRINT_CHAR)

@@ -21,16 +21,16 @@ void	ft_buff_append(t_buff *self, const char *str)
 
 	if (!str)
 		return ;
-	if (!self->str)
+	if (!self->data)
 	{
 		ft_buff_init_str(self, str);
 		return ;
 	}
-	self_len = ft_strlen(self->str);
+	self_len = ft_strlen(self->data);
 	str_len = ft_strlen(str);
 	while (self_len > self->max_size - str_len)
 		ft_buff_double_size(self);
-	ft_strlcpy(self->str + self_len, str, str_len + 1);
+	ft_strlcpy(self->data + self_len, str, str_len + 1);
 }
 
 void	ft_buff_append_char(t_buff *self, const char c)

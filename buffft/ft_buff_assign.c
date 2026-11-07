@@ -20,12 +20,12 @@ void	ft_buff_assign(t_buff *self, const char *str)
 
 	if (!str)
 	{
-		free(self->str);
-		self->str = NULL;
+		free(self->data);
+		self->data = NULL;
 		return ;
 	}
 	str_len = ft_strlen(str);
 	while (self->max_size <= str_len)
 		ft_buff_double_size(self);
-	ft_strlcpy(self->str, str, str_len + 1);
+	ft_strlcpy(self->data, str, str_len + 1);
 }
