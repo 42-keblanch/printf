@@ -18,14 +18,14 @@ void	ft_buff_print(const t_buff *self, int fd)
 	t_buff	out;
 
 	ft_buff_init(&out);
-	ft_buff_assign(&out, "string: [");
+	ft_buff_assign(&out, "data: [", 7);
 	if (self->data)
-		ft_buff_append(&out, self->data);
+		ft_buff_append(&out, self->data, self->curr_size);
 	else
-		ft_buff_append(&out, "(null)");
-	ft_buff_append(&out, "]\nsize: ");
+		ft_buff_append(&out, "(null)", 6);
+	ft_buff_append(&out, "]\nsize: ", 8);
 	ft_buff_append_int(&out, self->max_size);
-	ft_buff_append(&out, "\n");
+	ft_buff_append(&out, "\n", 1);
 	ft_putstr_fd(out.data, fd);
 	ft_buff_destroy(&out);
 }

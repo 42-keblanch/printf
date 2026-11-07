@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:29:48 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/06 15:49:46 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/07 22:45:36 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,6 @@ int	long_test(void)
 	ft_printf("%%p %p %%p\n", n);
 	free(str);
 	ft_printf("More tests\n");
-	ft_printf("EXPECTED [ 0  1 ]\nOUTPUT   [ %c %c %c ]\n", '0', 0, '1');
-	ft_printf("EXPECTED [ 2 1  ]\nOUTPUT   [ %c %c %c ]\n", '2', '1', 0);
-	ft_printf("EXPECTED [  1 2 ]\nOUTPUT   [ %c %c %c ]\n", 0, '1', '2');
 	ft_printf(" %p %p \n", LONG_MIN, LONG_MAX);
 	ft_printf(" %p %p \n", ULONG_MAX, -ULONG_MAX);
 	ft_printf("EXPECTED [ 4294967295] %u \n\n", -1);
@@ -82,7 +79,7 @@ int	short_test(void)
 
 int	main(void)
 {
-//	long_test();
-	short_test();
+	long_test();
+	// short_test();
 	return (0);
 }

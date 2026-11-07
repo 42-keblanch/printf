@@ -15,36 +15,37 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-size_t	ft_buff_insert(t_buff *self, size_t index, const char *str)
+size_t	ft_buff_insert(t_buff *self, size_t index,
+	const char *data, size_t size)
 {
-	size_t	str_len;
-	size_t	self_len;
-	char	*tmp;
-
-	if (!str)
+	if (!data)
 		return (0);
-	self_len = ft_strlen(self->data);
-	if (self_len < index)
+	if (self->curr_size < index)
 		return (0);
-	str_len = ft_strlen(str);
-	while (str_len >= self->max_size - self_len)
+	while (size >= self->max_size - self->curr_size)
 		ft_buff_double_size(self);
-	tmp = ft_strdup(self->data);
-	self->data[index] = '\0';
-	ft_buff_append(self, str);
-	ft_buff_append(self, tmp + index);
-	free(tmp);
-	return (str_len);
+	ft_memmove(self->data + index + size, self->data + index,
+		self->curr_size - index);
+	ft_memcpy(self->data + index, data, size);
+	self->curr_size += size;
+	return (size);
+}
+
+size_t	ft_buff_insert_str(t_buff *self, size_t index, const char *str)
+{
+	size_t	ret;
+	size_t	str_len;
+
+	str_len = ft_strlen(str);
+	ret = ft_buff_insert(self, index, str, str_len);
+	return (ret);
 }
 
 size_t	ft_buff_insert_char(t_buff *self, size_t index, const char c)
 {
-	char	str[2];
 	size_t	ret;
 
-	str[0] = c;
-	str[1] = '\0';
-	ret = ft_buff_insert(self, index, str);
+	ret = ft_buff_insert(self, index, &c, 1);
 	return (ret);
 }
 
@@ -55,7 +56,7 @@ size_t	ft_buff_insert_hex_lo(t_buff *self, size_t index, const int n)
 
 	str = ft_itoh(n);
 	ft_strtolower(str);
-	ret = ft_buff_insert(self, index, str);
+	ret = ft_buff_insert_str(self, index, str);
 	free(str);
 	return (ret);
 }
@@ -67,7 +68,7 @@ size_t	ft_buff_insert_hex_up(t_buff *self, size_t index, const int n)
 
 	str = ft_itoh(n);
 	ft_strtoupper(str);
-	ret = ft_buff_insert(self, index, str);
+	ret = ft_buff_insert_str(self, index, str);
 	free(str);
 	return (ret);
 }

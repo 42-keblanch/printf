@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 18:43:44 by keblanch          #+#    #+#             */
-/*   Updated: 2026/11/06 17:02:25 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/07 22:42:51 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,21 @@ static size_t	nb_len(int n)
 	return (r);
 }
 
+static size_t	nb_len_uint(unsigned int n)
+{
+	size_t	r;
+
+	if (n == 0)
+		return (1);
+	r = 0;
+	while (n > 0)
+	{
+		n /= 10;
+		++r;
+	}
+	return (r);
+}
+
 char	*ft_uitoa(unsigned int n)
 {
 	char	*ret;
@@ -42,7 +57,7 @@ char	*ft_uitoa(unsigned int n)
 
 	if (n == 0)
 		return (ft_strdup("0"));
-	i = nb_len(n);
+	i = nb_len_uint(n);
 	ret = (char *)ft_calloc(i + 1, sizeof(char));
 	while (n > 0)
 	{

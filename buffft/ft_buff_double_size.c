@@ -30,7 +30,7 @@ size_t	ft_buff_double_size(t_buff *self)
 		return (0);
 	}
 	if (self->data)
-		ft_memcpy(temp, self->data, ft_strlen(self->data));
+		ft_memcpy(temp, self->data, self->curr_size);
 	free(self->data);
 	self->data = temp;
 	return (self->max_size);

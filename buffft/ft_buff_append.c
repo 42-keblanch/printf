@@ -14,48 +14,44 @@
 #include "../libft.h"
 #include <stddef.h>
 
-void	ft_buff_append(t_buff *self, const char *str)
+void	ft_buff_append(t_buff *self, const char *data, size_t size)
 {
-	size_t	self_len;
-	size_t	str_len;
-
-	if (!str)
+	if (!data)
 		return ;
 	if (!self->data)
 	{
-		ft_buff_init_str(self, str);
+		ft_buff_init_str(self, data);
 		return ;
 	}
-	self_len = ft_strlen(self->data);
-	str_len = ft_strlen(str);
-	while (self_len > self->max_size - str_len)
+	while (self->curr_size > self->max_size - size)
 		ft_buff_double_size(self);
-	ft_strlcpy(self->data + self_len, str, str_len + 1);
+	ft_memcpy(self->data + self->curr_size, data, size);
+	self->curr_size += size;
 }
 
 void	ft_buff_append_char(t_buff *self, const char c)
 {
-	char	str[2];
-
-	str[0] = c;
-	str[1] = '\0';
-	ft_buff_append(self, str);
+	ft_buff_append(self, &c, 1);
 }
 
 void	ft_buff_append_hex_lo(t_buff *self, const int n)
 {
 	char	*str;
+	size_t	len;
 
 	str = ft_itoh(n);
 	ft_strtolower(str);
-	ft_buff_append(self, str);
+	len = ft_strlen(str);
+	ft_buff_append(self, str, len);
 }
 
 void	ft_buff_append_hex_up(t_buff *self, const int n)
 {
 	char	*str;
+	size_t	len;
 
 	str = ft_itoh(n);
 	ft_strtoupper(str);
-	ft_buff_append(self, str);
+	len = ft_strlen(str);
+	ft_buff_append(self, str, len);
 }

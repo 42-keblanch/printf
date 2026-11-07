@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 01:12:35 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/06 15:39:21 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/07 21:40:19 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 typedef enum e_print
 {
 	PRINT_CHAR = 'c',
-	PRINt_buff = 's',
+	PRINT_BUFF = 's',
 	PRINT_POINTER = 'p',
 	PRINT_DECIMAL = 'd',
 	PRINT_INTEGER = 'i',
@@ -34,8 +34,8 @@ typedef enum e_print
 }	t_print;
 
 int		ft_printf(const char *str, ...);
-size_t	ft_printf_parse(t_buff *out, size_t *cursor, va_list *args);
-size_t	ft_printf_parse_char(t_buff *out, size_t *cursor, va_list *args);
+void	ft_printf_parse(t_buff *out, size_t *cursor, va_list *args);
+void	ft_printf_parse_char(t_buff *out, size_t *cursor, va_list *args);
 void	ft_printf_parse_string(t_buff *out, size_t *cursor, va_list *args);
 void	ft_printf_parse_pointer(t_buff *out, size_t *cursor, va_list *args);
 void	ft_printf_parse_integer(t_buff *out, size_t *cursor, va_list *args);

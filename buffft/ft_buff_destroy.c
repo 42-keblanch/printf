@@ -18,4 +18,5 @@ void	ft_buff_destroy(t_buff *self)
 	free(self->data);
 	self->data = NULL;
 	self->max_size = 0;
+	self->curr_size = 0;
 }

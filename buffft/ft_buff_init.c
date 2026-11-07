@@ -28,7 +28,11 @@ t_buff	*ft_buff_init_str(t_buff *self, const char *str)
 	size_t	str_len;
 
 	str_len = ft_strlen(str);
+	self->data = ft_calloc(str_len, sizeof(char));
+	if (!self->data)
+		return (NULL);
 	self->max_size = str_len;
 	self->curr_size = str_len;
+	ft_memcpy(self->data, str, str_len);
 	return (self);
 }

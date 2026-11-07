@@ -20,17 +20,8 @@ size_t	ft_buff_insert_int(t_buff *self, size_t index, const int n)
 	size_t	ret;
 
 	str = ft_itoa(n);
-	ret = ft_buff_insert(self, index, str);
+	ret = ft_buff_insert_str(self, index, str);
 	free(str);
-	return (ret);
-}
-
-size_t	ft_buff_insert_percent(t_buff *self, size_t index)
-{
-	const char	*str = "%";
-	size_t		ret;
-
-	ret = ft_buff_insert(self, index, str);
 	return (ret);
 }
 
@@ -40,7 +31,7 @@ size_t	ft_buff_insert_ptr(t_buff *self, size_t index, const void *p)
 	size_t	ret;
 
 	str = ft_ptoh(p);
-	ret = ft_buff_insert(self, index, str);
+	ret = ft_buff_insert_str(self, index, str);
 	free(str);
 	return (ret);
 }
@@ -51,7 +42,7 @@ size_t	ft_buff_insert_uint(t_buff *self, size_t index, const t_uint n)
 	size_t	ret;
 
 	str = ft_uitoa(n);
-	ret = ft_buff_insert(self, index, str);
+	ret = ft_buff_insert_str(self, index, str);
 	free(str);
 	return (ret);
 }

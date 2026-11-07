@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 20:49:51 by keblanch          #+#    #+#             */
-/*   Updated: 2026/11/07 17:25:52 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/07 22:59:29 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ t_fmtsp	ft_printf_parse_spec(t_buff *out, size_t *cursor)
 	spec.width = 0;
 	spec.precision = -1;
 	spec.fmtsp_len = 0;
-	spec.specifier = out->data[*cursor + 1];
+	spec.specifier = '\0';
+	if (*cursor < out->curr_size)
+		spec.specifier = out->data[*cursor + 1];
 	return (spec);
 }

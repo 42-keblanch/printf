@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 01:15:03 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/07 17:25:52 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/07 22:38:55 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,21 @@ static void	ft_printf_parse2(t_buff *out, size_t *cursor,
 		++*cursor;
 }
 
-size_t	ft_printf_parse(t_buff *out, size_t *cursor, va_list *args)
+void	ft_printf_parse(t_buff *out, size_t *cursor, va_list *args)
 {
+	char	*percent_pos;
 	t_fmtsp	tmp;
-	size_t	nb_null_char;
 
-	*cursor += ft_strfind(out->data + *cursor, "%");
+	if (*cursor >= out->curr_size)
+		return ;
+	percent_pos = ft_memchr(out->data + *cursor, '%', out->curr_size - *cursor);
+	if (!percent_pos)
+		return ;
+	*cursor = percent_pos - out->data;
 	tmp = ft_printf_parse_spec(out, cursor);
-	nb_null_char = 0;
 	if (tmp.specifier == PRINT_CHAR)
-		nb_null_char += ft_printf_parse_char(out, cursor, args);
-	else if (tmp.specifier == PRINt_buff)
+		ft_printf_parse_char(out, cursor, args);
+	else if (tmp.specifier == PRINT_BUFF)
 		ft_printf_parse_string(out, cursor, args);
 	else if (tmp.specifier == PRINT_POINTER)
 		ft_printf_parse_pointer(out, cursor, args);
@@ -49,21 +53,15 @@ size_t	ft_printf_parse(t_buff *out, size_t *cursor, va_list *args)
 		ft_printf_parse_integer(out, cursor, args);
 	else
 		ft_printf_parse2(out, cursor, args, tmp);
-	return (nb_null_char);
 }
 
-size_t	ft_printf_parse_char(t_buff *out, size_t *cursor, va_list *args)
+void	ft_printf_parse_char(t_buff *out, size_t *cursor, va_list *args)
 {
 	char	c;
-	size_t	is_null_char;
 
 	c = va_arg(*args, int);
-	is_null_char = 0;
-	if (c == '\0')
-		is_null_char = 1;
 	ft_buff_erase(out, *cursor, 2);
 	*cursor += ft_buff_insert_char(out, *cursor, c);
-	return (is_null_char);
 }
 
 void	ft_printf_parse_string(t_buff *out, size_t *cursor, va_list *args)
@@ -73,9 +71,9 @@ void	ft_printf_parse_string(t_buff *out, size_t *cursor, va_list *args)
 	str = va_arg(*args, char *);
 	ft_buff_erase(out, *cursor, 2);
 	if (str)
-		*cursor += ft_buff_insert(out, *cursor, str);
+		*cursor += ft_buff_insert_str(out, *cursor, str);
 	else
-		*cursor += ft_buff_insert(out, *cursor, NULL_STR);
+		*cursor += ft_buff_insert_str(out, *cursor, NULL_STR);
 }
 
 void	ft_printf_parse_pointer(t_buff *out, size_t *cursor, va_list *args)

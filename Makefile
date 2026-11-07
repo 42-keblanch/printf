@@ -66,8 +66,7 @@ SRCS = libft/ft_atoi.c \
 	   buffft/ft_buff_init.c \
 	   buffft/ft_buff_insert.c \
 	   buffft/ft_buff_insert_2.c \
-	   buffft/ft_buff_print.c \
-	   buffft/ft_buff_substr.c
+	   buffft/ft_buff_print.c
 PRINTF_SRCS = printfft/ft_printf_parse.c \
 			  printfft/ft_printf_parse_2.c \
 			  printfft/ft_printf.c

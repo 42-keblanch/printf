@@ -16,30 +16,29 @@
 void	ft_buff_append_int(t_buff *self, const int n)
 {
 	char	*str;
+	size_t	len;
 
 	str = ft_itoa(n);
-	ft_buff_append(self, str);
-}
-
-void	ft_buff_append_percent(t_buff *self)
-{
-	const char	*str = "%";
-
-	ft_buff_append(self, str);
+	len = ft_strlen(str);
+	ft_buff_append(self, str, len);
 }
 
 void	ft_buff_append_pointer(t_buff *self, const void *p)
 {
 	char	*str;
+	size_t	len;
 
 	str = ft_ptoh(p);
-	ft_buff_append(self, str);
+	len = ft_strlen(str);
+	ft_buff_append(self, str, len);
 }
 
-void	ft_buff_append_unsigned(t_buff *self, const unsigned int n)
+void	ft_buff_append_unsigned(t_buff *self, const t_uint n)
 {
 	char	*str;
+	size_t	len;
 
 	str = ft_itoa(n);
-	ft_buff_append(self, str);
+	len = ft_strlen(str);
+	ft_buff_append(self, str, len);
 }

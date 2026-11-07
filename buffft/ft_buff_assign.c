@@ -14,18 +14,15 @@
 #include "../libft.h"
 #include <stdlib.h>
 
-void	ft_buff_assign(t_buff *self, const char *str)
+void	ft_buff_assign(t_buff *self, const char *data, size_t size)
 {
-	size_t	str_len;
-
-	if (!str)
+	if (!data)
 	{
 		free(self->data);
 		self->data = NULL;
 		return ;
 	}
-	str_len = ft_strlen(str);
-	while (self->max_size <= str_len)
+	while (self->max_size <= size)
 		ft_buff_double_size(self);
-	ft_strlcpy(self->data, str, str_len + 1);
+	ft_memcpy(self->data, data, size);
 }
