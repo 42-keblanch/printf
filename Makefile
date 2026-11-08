@@ -86,7 +86,7 @@ test: $(OBJS) $(PRINTF_BONUS_OBJS)
 	@$(CC) $(CFLAGS) -I. $(DEBUG) main.c $^ -o $(TEST_O)
 	@printf "${YELLOW}Building ${BLUE}$@\n${NEUTRAL}"
 	@printf "${GREEN}Testing...\n${NEUTRAL}"
-	@./$(TEST_O) | cat -e
+	@valgrind ./$(TEST_O)
 	@printf "${GREEN}Tests ended...\n${NEUTRAL}"
 
 $(NAME): $(OBJS) $(PRINTF_OBJS)

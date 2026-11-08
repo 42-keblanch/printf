@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:29:48 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/07 22:45:36 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/08 15:51:44 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,15 @@ int	long_test(void)
 
 int	short_test(void)
 {
-	int a = ft_printf("%%c %c %%c\n", 0);
-	int b = printf("%%c %c %%c\n", 0);
+	int a = ft_printf("[%5c]\n", 'a');
+	int b = printf("[%5c]\n", 'a');
 	printf("ft: %d libc: %d\n", a, b);
 	return (0);
 }
 
 int	main(void)
 {
-	long_test();
-	// short_test();
+	// long_test();
+	short_test();
 	return (0);
 }
