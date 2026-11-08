@@ -6,11 +6,11 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:29:48 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/08 15:51:44 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/08 19:40:26 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printfft.h"
+#include "printfft_bonus.h"
 #include <limits.h>
 #include <stdlib.h>
 #define TEST_BUFF "%% this is the test string %%\n\
@@ -71,9 +71,18 @@ int	long_test(void)
 
 int	short_test(void)
 {
-	int a = ft_printf("[%5c]\n", 'a');
-	int b = printf("[%5c]\n", 'a');
-	printf("ft: %d libc: %d\n", a, b);
+	// int a = ft_printf("[%5c]\n", 'a');
+	// int b = printf("[%---5c]\n", 'a');
+	// printf("ft: %d libc: %d\n", a, b);
+	t_buff	out;
+	ft_buff_init_str(&out, "%-0#50.42d");
+	size_t	i = 0;
+	t_fmtsp	spec = ft_printf_parse_format(&out, &i);
+	printf("FLAGS:[%s]\nWIDTH:[%d]\nPRECISION[%d]\nSPECIFIER[%c]\n",
+		spec.flags, spec.width, spec.precision, spec.specifier);
+	if (spec.flags)
+		free(spec.flags);
+	ft_buff_destroy(&out);
 	return (0);
 }
 

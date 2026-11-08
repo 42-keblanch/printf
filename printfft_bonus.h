@@ -6,7 +6,7 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 20:24:07 by keblanch          #+#    #+#             */
-/*   Updated: 2026/11/07 21:40:30 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/08 19:38:51 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ struct s_format_specifier
 	char	*flags;
 	int		width;
 	int		precision;
-	int		fmtsp_len;
 	char	specifier;
+	int		fmtsp_len;
 };
 typedef struct s_format_specifier	t_fmtsp;
 
@@ -53,6 +53,11 @@ void	ft_printf_parse_unsigned(t_buff *out, size_t *cursor, va_list *args);
 void	ft_printf_parse_uphex(t_buff *out, size_t *cursor, va_list *args);
 void	ft_printf_parse_lohex(t_buff *out, size_t *cursor, va_list *args);
 void	ft_printf_parse_percent(t_buff *out, size_t *cursor);
-t_fmtsp	ft_printf_parse_spec(t_buff *out, size_t *cursor);
+
+t_fmtsp	ft_printf_parse_format(t_buff *out, size_t *cursor);
+void	ft_printf_parse_flags(t_buff *out, size_t *cursor, t_fmtsp *spec);
+void	ft_printf_parse_width(t_buff *out, size_t *cursor, t_fmtsp *spec);
+void	ft_printf_parse_precision(t_buff *out, size_t *cursor, t_fmtsp *spec);
+void	ft_printf_parse_spec(t_buff *out, size_t *cursor, t_fmtsp *spec);
 
 #endif

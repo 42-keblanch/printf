@@ -73,7 +73,7 @@ PRINTF_SRCS = printfft/ft_printf_parse.c \
 PRINTF_BONUS_SRCS = printfft_bonus/ft_printf.c \
 					printfft_bonus/ft_printf_parse.c \
 					printfft_bonus/ft_printf_parse_2.c \
-					printfft_bonus/ft_printf_parse_spec.c
+					printfft_bonus/ft_printf_parse_format.c
 OBJS = $(SRCS:.c=.o)
 PRINTF_OBJS = $(PRINTF_SRCS:.c=.o)
 PRINTF_BONUS_OBJS = $(PRINTF_BONUS_SRCS:.c=.o)

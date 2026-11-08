@@ -6,26 +6,27 @@
 /*   By: keblanch <keblanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/25 01:15:03 by kblanche          #+#    #+#             */
-/*   Updated: 2026/11/07 22:38:55 by keblanch         ###   ########.fr       */
+/*   Updated: 2026/11/08 19:35:33 by keblanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../printfft_bonus.h"
-#include "../libft.h"
+#include "printfft_bonus.h"
+#include "libft.h"
+#include <stdlib.h>
 #define NULL_STR "(null)"
 
 static void	ft_printf_parse2(t_buff *out, size_t *cursor,
-	va_list *args, t_fmtsp tmp)
+	va_list *args, t_fmtsp *tmp)
 {
-	if (tmp.specifier == PRINT_INTEGER)
+	if (tmp->specifier == PRINT_INTEGER)
 		ft_printf_parse_integer(out, cursor, args);
-	else if (tmp.specifier == PRINT_UNSIGNED)
+	else if (tmp->specifier == PRINT_UNSIGNED)
 		ft_printf_parse_unsigned(out, cursor, args);
-	else if (tmp.specifier == PRINT_UPHEX)
+	else if (tmp->specifier == PRINT_UPHEX)
 		ft_printf_parse_uphex(out, cursor, args);
-	else if (tmp.specifier == PRINT_LOHEX)
+	else if (tmp->specifier == PRINT_LOHEX)
 		ft_printf_parse_lohex(out, cursor, args);
-	else if (tmp.specifier == PRINT_PERCENT)
+	else if (tmp->specifier == PRINT_PERCENT)
 		ft_printf_parse_percent(out, cursor);
 	else
 		++*cursor;
@@ -42,7 +43,7 @@ void	ft_printf_parse(t_buff *out, size_t *cursor, va_list *args)
 	if (!percent_pos)
 		return ;
 	*cursor = percent_pos - out->data;
-	tmp = ft_printf_parse_spec(out, cursor);
+	tmp = ft_printf_parse_format(out, cursor);
 	if (tmp.specifier == PRINT_CHAR)
 		ft_printf_parse_char(out, cursor, args);
 	else if (tmp.specifier == PRINT_BUFF)
@@ -52,7 +53,10 @@ void	ft_printf_parse(t_buff *out, size_t *cursor, va_list *args)
 	else if (tmp.specifier == PRINT_DECIMAL)
 		ft_printf_parse_integer(out, cursor, args);
 	else
-		ft_printf_parse2(out, cursor, args, tmp);
+		ft_printf_parse2(out, cursor, args, &tmp);
+	if (tmp.flags)
+		free(tmp.flags);
+	tmp.flags = 0;
 }
 
 void	ft_printf_parse_char(t_buff *out, size_t *cursor, va_list *args)
